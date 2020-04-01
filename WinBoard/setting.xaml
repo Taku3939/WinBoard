@@ -1,0 +1,15 @@
+﻿<Window x:Class="WinBoard.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinBoard"
+        mc:Ignorable="d"
+        Title="Setting" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="pathText" HorizontalAlignment="Left" Height="23" Margin="124,31,0,0" TextWrapping="Wrap" Text="D:\Application" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="label" Content="Path" HorizontalAlignment="Left" Margin="57,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.242,-0.386"/>
+        <Button x:Name="button" Content="Update" HorizontalAlignment="Left" Margin="661,363,0,0" VerticalAlignment="Top" Width="96" Click="button_Click"/>
+
+    </Grid>
+</Window>

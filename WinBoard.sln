@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA0A27D1-C776-4667-9C5B-DD3FE67919A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\WpfDashboard\.editorconfig = ..\WpfDashboard\.editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBoard", "WinBoard\WinBoard.csproj", "{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {000CD62E-69E2-40F0-9600-7C39DAE6B1DF}
+	EndGlobalSection
+EndGlobal
