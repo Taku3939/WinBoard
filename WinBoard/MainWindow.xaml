@@ -5,33 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:dd ="urn:gong-wpf-dragdrop"
-        xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:WinBoard"
         WindowState="Maximized"
         ResizeMode="CanResizeWithGrip"
         AllowDrop="True"
- 
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         Title="MainWindow" Height="704.456" Width="1723.981">
-    <Window.Resources>
-        <ResourceDictionary>
-            <BitmapImage x:Key="ImageSource1" UriSource="./Resources/backgroundImg.jpg" />
-        </ResourceDictionary>
-    </Window.Resources>
-    <Window.Background>
-        <ImageBrush ImageSource="{StaticResource ImageSource1}" Opacity="0.2"/>
-    </Window.Background>
     <DockPanel x:Name="MainPanel" Drop="MainPanel_Drop">
-        <Button x:Name="button" Content="Setting" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Width="120" Click="button_Click_1">
+        <Button x:Name="button" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignSettingButton" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Width="120" Click="button_Click_1" Background="AliceBlue" Margin="40,20,40,20">
+            <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" Foreground="Black"/>
         </Button>
-        <TextBox x:Name="SerchText" FontSize="20" HorizontalAlignment="Center" Margin="100,20,100,20" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="303" Style="{StaticResource MaterialDesignFloatingHintTextBox}" wpf:HintAssist.Hint="SerchApplication" TextChanged="textBox_TextChanged" Grid.ColumnSpan="3" Height="48"/>
+        <TextBox x:Name="SerchText"  Style="{StaticResource MaterialDesignTextBox}"  materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue" FontSize="20" HorizontalAlignment="Center" Margin="100,20,100,20" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="303" materialDesign:HintAssist.Hint="SerchApplication" TextChanged="textBox_TextChanged" Grid.ColumnSpan="3" Height="48" />
         <ScrollViewer Name="MyScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible"  Height="700" VerticalAlignment="Center">
             <WrapPanel Name="WrapPanel" Width="{Binding ElementName=ScrollViewerPanel,Path=ViewportWidth}" Margin="10,10,20,10">
             </WrapPanel>
         </ScrollViewer>
     </DockPanel>
-    <!--<TextBox x:Name="SerchText" Grid.Column="4" HorizontalAlignment="Center" Margin="44,38,82,10" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="303" Style="{StaticResource MaterialDesignFloatingHintTextBox}" wpf:HintAssist.Hint="SerchApplication" TextChanged="textBox_TextChanged" Grid.ColumnSpan="3" Height="48"/>-->
-    <!--<Slider x:Name="slider" Height="5" Width="10" Grid.Column="5" HorizontalAlignment="Left" Margin="76,33,0,0" Grid.Row="6" VerticalAlignment="Top"/>-->
 </Window>

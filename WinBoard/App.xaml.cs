@@ -7,6 +7,6 @@ namespace WinBoard
     /// </summary>
     public partial class App
     {
-
+        
     }
 }

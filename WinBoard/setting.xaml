@@ -5,11 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinBoard"
         mc:Ignorable="d"
+        Background="AliceBlue"
         Title="Setting" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="pathText" HorizontalAlignment="Left" Height="23" Margin="124,31,0,0" TextWrapping="Wrap" Text="D:\Application" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label" Content="Path" HorizontalAlignment="Left" Margin="57,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.242,-0.386"/>
-        <Button x:Name="button" Content="Update" HorizontalAlignment="Left" Margin="661,363,0,0" VerticalAlignment="Top" Width="96" Click="button_Click"/>
-
+        <TextBox x:Name="pathText" HorizontalAlignment="Left" Height="23" Margin="198,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321" />
+        <Label x:Name="label" Content="ApplicationPath" HorizontalAlignment="Left" Margin="37,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.242,-0.386"/>
+        <Button x:Name="button" Content="Update" HorizontalAlignment="Left" Margin="661,363,0,0" VerticalAlignment="Top" Width="96" Click="button_Click" Background="Aqua" Foreground="WhiteSmoke"/>
+        <Label x:Name="label1" Content="background" HorizontalAlignment="Left" Margin="46,82,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="backgroundPath" HorizontalAlignment="Left" Height="23" Margin="198,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321" />
+        <Label x:Name="label2" Content="SearchTextColor" HorizontalAlignment="Left" Margin="37,132,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="r" Content="r" HorizontalAlignment="Left" Margin="198,132,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="g" Content="g" HorizontalAlignment="Left" Margin="325,132,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="b" Content="b" HorizontalAlignment="Left" Margin="441,132,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="r_SearchColor" HorizontalAlignment="Left" Height="22" Margin="244,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="27" />
+        <TextBox x:Name="g_SearchColor" HorizontalAlignment="Left" Height="22" Margin="369,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="27" />
+        <TextBox x:Name="b_SearchColor" HorizontalAlignment="Left" Height="22" Margin="492,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="27" />
     </Grid>
 </Window>

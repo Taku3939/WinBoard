@@ -5,21 +5,34 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA0A27D1-C776-4667-9C5B-DD3FE67919A6}"
 	ProjectSection(SolutionItems) = preProject
-		..\WpfDashboard\.editorconfig = ..\WpfDashboard\.editorconfig
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBoard", "WinBoard\WinBoard.csproj", "{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWinBoard", "SetupWinBoard\SetupWinBoard.vdproj", "{FDDD551D-8811-418A-9563-A9FB2EF8A650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Description = WinBoard
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Debug|x64.ActiveCfg = Debug|x64
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Debug|x64.Build.0 = Debug|x64
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|x64.ActiveCfg = Release|x64
+		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|x64.Build.0 = Release|x64
+		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Debug|Any CPU.ActiveCfg = Debug
+		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Debug|x64.ActiveCfg = Debug
+		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Release|Any CPU.ActiveCfg = Release
+		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
