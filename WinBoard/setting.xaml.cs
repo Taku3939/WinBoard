@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*!
+ * Process.js v13
+ *
+ * Copyright (c) 2020 Takuya Isaki
+ *
+ * Released under the MIT license.
+ * see https://opensource.org/licenses/MIT
+ *
+ * The inherits function is:
+ * ISC license | https://github.com/isaacs/inherits/blob/master/LICENSE
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
