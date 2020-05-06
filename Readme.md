@@ -1,7 +1,8 @@
 # WinBoard
 
 WinBoardはWindows用のDashBoardアプリケーションです
- 
+[Booth](https://takutech.booth.pm/items/2051706)でインストーラーを配布中
+
 # Features
  
 Windowsでデスクトップにショートカットが散らかってしまうことを防止する
@@ -14,7 +15,7 @@ Installerを使いアプリケーションをインストールし、起動す�
 アイコンを右クリックすることでショートカットの削除ができます。
  
 
-# Author Takuya Isaki
+# Author
  
 * 作成者 Takuya Isaki
 * 所属	個人
