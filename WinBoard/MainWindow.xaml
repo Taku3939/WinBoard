@@ -17,7 +17,7 @@
         <Button x:Name="button" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignSettingButton" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Width="120" Click="button_Click_1" Background="AliceBlue" Margin="40,20,40,20">
             <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" Foreground="Black"/>
         </Button>
-        <TextBox x:Name="SerchText"  Style="{StaticResource MaterialDesignTextBox}"  materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue" FontSize="20" HorizontalAlignment="Center" Margin="100,20,100,20" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="303" materialDesign:HintAssist.Hint="SerchApplication" TextChanged="textBox_TextChanged" Grid.ColumnSpan="3" Height="48" />
+        <TextBox x:Name="SearchText"  Style="{StaticResource MaterialDesignTextBox}"  materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue" FontSize="20" HorizontalAlignment="Center" Margin="100,20,100,20" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="303" materialDesign:HintAssist.Hint="Search" TextChanged="textBox_TextChanged" Grid.ColumnSpan="3" Height="48" />
         <ScrollViewer Name="MyScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible"  Height="700" VerticalAlignment="Center">
             <WrapPanel Name="WrapPanel" Width="{Binding ElementName=ScrollViewerPanel,Path=ViewportWidth}" Margin="10,10,20,10">
             </WrapPanel>

@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBoard", "WinBoard\WinBoard.csproj", "{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWinBoard", "SetupWinBoard\SetupWinBoard.vdproj", "{FDDD551D-8811-418A-9563-A9FB2EF8A650}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWinboard", "SetupWinboard\SetupWinboard.vdproj", "{063215F9-F659-4AEC-AD49-323BBFEC360E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|x64.ActiveCfg = Release|x64
 		{DE4BFCB6-76D1-4732-B1DB-19DA204A8517}.Release|x64.Build.0 = Release|x64
-		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Debug|Any CPU.ActiveCfg = Debug
-		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Debug|x64.ActiveCfg = Debug
-		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Release|Any CPU.ActiveCfg = Release
-		{FDDD551D-8811-418A-9563-A9FB2EF8A650}.Release|x64.ActiveCfg = Release
+		{063215F9-F659-4AEC-AD49-323BBFEC360E}.Debug|Any CPU.ActiveCfg = Debug
+		{063215F9-F659-4AEC-AD49-323BBFEC360E}.Debug|x64.ActiveCfg = Debug
+		{063215F9-F659-4AEC-AD49-323BBFEC360E}.Release|Any CPU.ActiveCfg = Release
+		{063215F9-F659-4AEC-AD49-323BBFEC360E}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

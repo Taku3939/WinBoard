@@ -16,20 +16,13 @@ using System.Windows;
 using System.Drawing;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Controls;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Windows.Media.Imaging;
-using System.Windows.Interop;
 using Microsoft.WindowsAPICodePack.Shell;
 using System.Windows.Media;
-using System.Collections;
-using System.Windows.Media.Animation;
-using Microsoft.CSharp.RuntimeBinder;
-using System.Collections.ObjectModel;
 using System.Security.AccessControl;
 using System.Security.Principal;
-using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
 namespace WinBoard
@@ -41,10 +34,11 @@ namespace WinBoard
     {
 
         private List<AppShortcut> appIcons = new List<AppShortcut> { };
-        private string config = @"./Resources/config.json";
+       // private string config = @"./Resources/config.json";
 
         public MainWindow()
         {
+            string config = ApplicationUtility.GetUserAppDataPath() + @"\WinBoard\config.json";
             //string ResourcesPath = @"./Resources";
             InitializeComponent();
             if (!File.Exists(config))
@@ -58,28 +52,29 @@ namespace WinBoard
                 var json = sr.ReadToEnd();
                 appPath = JsonConvert.DeserializeObject<AppPath>(json);
             }
-            if (appPath.r_SearchColor < 255 && appPath.r_SearchColor > 0)
+
+            if (appPath.r_SearchColor < 256 && appPath.r_SearchColor > 0)
                 DashboardParam.rSerachColor = appPath.r_SearchColor;
             else
                 DashboardParam.rSerachColor = 0;
 
-            if (appPath.g_SearchColor < 255 && appPath.g_SearchColor > 0)
+            if (appPath.g_SearchColor < 256 && appPath.g_SearchColor > 0)
                 DashboardParam.gSearchColor = appPath.g_SearchColor;
             else
                 DashboardParam.gSearchColor = 0;
-            if (appPath.b_SearchColor < 255 && appPath.b_SearchColor > 0)
+            if (appPath.b_SearchColor < 256 && appPath.b_SearchColor > 0)
                 DashboardParam.bSearchColor = appPath.b_SearchColor;
             else
                 DashboardParam.bSearchColor = 0;
 
-            TextColorChange(SerchText, (byte)DashboardParam.rSerachColor, (byte)DashboardParam.gSearchColor, (byte)DashboardParam.bSearchColor);
+            TextColorChange(SearchText, (byte)DashboardParam.rSerachColor, (byte)DashboardParam.gSearchColor, (byte)DashboardParam.bSearchColor);
+
             //背景画像が指定されていれば読み込む
             if (appPath.BackgroundPath != null && File.Exists(appPath.BackgroundPath))
             {
                 DashboardParam.BackgroundPath = appPath.BackgroundPath;
-                ChangeBg();
+                ChangeBg(Path.GetFullPath(DashboardParam.BackgroundPath));
             }
-
 
             if (appPath.ApplicationPath != null && Directory.Exists(appPath.ApplicationPath))
             {
@@ -87,15 +82,24 @@ namespace WinBoard
                 Reload();
             }
 
+
         }
 
         void AllReload()
         {
-            TextColorChange(SerchText, (byte)DashboardParam.rSerachColor, (byte)DashboardParam.gSearchColor, (byte)DashboardParam.bSearchColor);
-            ChangeBg();
+            if (DashboardParam.rSerachColor > 255 && DashboardParam.rSerachColor < 0)
+                DashboardParam.rSerachColor = 0;
+            if (DashboardParam.gSearchColor > 255 && DashboardParam.gSearchColor < 0)
+                DashboardParam.gSearchColor = 0;
+            if (DashboardParam.bSearchColor > 255 && DashboardParam.bSearchColor < 0)
+                DashboardParam.bSearchColor = 0;
+            TextColorChange(SearchText,  Convert.ToByte(DashboardParam.rSerachColor), Convert.ToByte(DashboardParam.gSearchColor), Convert.ToByte(DashboardParam.bSearchColor));
+            if(File.Exists(DashboardParam.BackgroundPath))
+            { 
+                ChangeBg(Path.GetFullPath(DashboardParam.BackgroundPath));
+            }
             Reload();
         }
-
 
         /// <summary>
         /// TextBoxのForegroundの色変更
@@ -106,16 +110,15 @@ namespace WinBoard
         /// <param name="b"></param>
         void TextColorChange(TextBox box, byte r, byte g, byte b)
         {
-            var color = System.Windows.Media.Color.FromRgb(r, g, b);
-            var brush = new System.Windows.Media.SolidColorBrush(color);
+            System.Windows.Media.Color color = System.Windows.Media.Color.FromRgb(r, g, b);
+            System.Windows.Media.SolidColorBrush brush = new System.Windows.Media.SolidColorBrush(color);
             box.Foreground = brush;
         }
-        
-        void ChangeBg()
+
+        void ChangeBg(string bgPath)
         {
-            try
-            {
-                BitmapImage bitmap = new BitmapImage(new Uri(Path.GetFullPath(DashboardParam.BackgroundPath)));
+            if ( (bgPath.EndsWith(".png") || bgPath.EndsWith(".jpg") || bgPath.EndsWith(".jpeg"))) {
+                BitmapImage bitmap = new BitmapImage(new Uri(bgPath));
                 ImageBrush bg = new ImageBrush(bitmap);
                 bg.Opacity = 0.2;
                 var windows = Application.Current.Windows.OfType<MainWindow>();
@@ -123,9 +126,9 @@ namespace WinBoard
                 foreach (var window in windows)
                     window.Background = bg;
             }
-            catch
+            else
             {
-                return;
+                DashboardParam.BackgroundPath = "";
             }
         }
 
@@ -180,7 +183,7 @@ namespace WinBoard
                 }
             }
 
-            var shortcuts = appIcons.Where(x => x.name.ToUpper().Contains(SerchText.Text.ToUpper())).ToList();
+            var shortcuts = appIcons.Where(x => x.name.ToUpper().Contains(SearchText.Text.ToUpper())).ToList();
 
             foreach (var appIcon in shortcuts)
             {
@@ -214,7 +217,7 @@ namespace WinBoard
                 }
                 else
                 {
-                    var f = CreateShrotcutFile(file, DashboardParam.ApplicaitonPath);
+                    var f = ApplicationUtility.CreateShrotcutFile(file, DashboardParam.ApplicaitonPath);
                     SetFullContorol(f);
                 }
 
@@ -263,53 +266,7 @@ namespace WinBoard
             this.WindowState = WindowState.Minimized;
         }
 
-        /// <summary>
-        /// ショートカットファイルを作成します.
-        /// </summary>
-        /// <param name="filePath">ファイルのパス</param>
-        /// <param name="destDir">出力先のディレクトリのパス</param>
-        public static string CreateShrotcutFile(string filePath, string destDir)
-        {
-
-            Console.WriteLine(new FileInfo(filePath).Name + " のショートカットを作成します。");
-
-            // ショートカットファイル名
-            string shortcutFile = Path.GetFileNameWithoutExtension(filePath) + @".lnk";
-
-            // 作成するショートカットのパス
-            string shortcutPath = destDir + @"\" + shortcutFile;
-
-            // リフレクションでWSHオブジェクトを作成
-            // GUIDは WSH のCLSID
-            dynamic shell = Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8")));
-
-            // WSHでショートカットを作成
-            var shortcut = shell.CreateShortcut(shortcutPath);
-
-            // ショートカットのリンク先設定
-            shortcut.TargetPath = filePath;
-
-            // アイコンのパスを設定
-            // ショートカットの元となるファイルから 0番目 のアイコンを指定
-            shortcut.IconLocation = filePath + ",0";
-
-            // ショートカットを保存
-            shortcut.Save();
-
-            //FileSystemAccessRule rule = new FileSystemAccessRule(new NTAccount("SYSTEM"),
-            //    FileSystemRights.FullControl,
-            //    InheritanceFlags.ObjectInherit | InheritanceFlags.ContainerInherit,
-            //    PropagationFlags.None,
-            //    AccessControlType.Allow);
-            //DirectorySecurity security = Directory.GetAccessControl(destDir);
-            //security.SetAccessRule(rule);
-            //Directory.SetAccessControl(destDir, security);
-            // Shell、COMオブジェクトの解放
-            System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shortcut);
-            System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shell);
-            return shortcutPath;
-
-        }
+      
 
         static void SetFullContorol(string path)
         {
@@ -342,7 +299,7 @@ namespace WinBoard
         public string path { get; set; }
         public string name { get; set; }
 
-        private bool LabelVisibliy = true;
+        //private bool LabelVisibliy = true;
         public Button button;
         private System.Windows.Controls.Image image;
 
@@ -350,7 +307,6 @@ namespace WinBoard
         private System.Windows.Media.Color LableColor = Colors.Gray;
         private float LableSize = 14;
         #endregion
-
         
         int face = 130;
         public AppShortcut(string path)
@@ -518,5 +474,85 @@ namespace WinBoard
     interface IObserver
     {
         void Update();
+    }
+
+    public static class ApplicationUtility
+    {
+        /// <summary>
+        /// ショートカットファイルを作成します.
+        /// </summary>
+        /// <param name="filePath">ファイルのパス</param>
+        /// <param name="destDir">出力先のディレクトリのパス</param>
+        public static string CreateShrotcutFile(string filePath, string destDir)
+        {
+
+            Console.WriteLine(new FileInfo(filePath).Name + " のショートカットを作成します。");
+
+            // ショートカットファイル名
+            string shortcutFile = Path.GetFileNameWithoutExtension(filePath) + @".lnk";
+
+            // 作成するショートカットのパス
+            string shortcutPath = destDir + @"\" + shortcutFile;
+
+            // リフレクションでWSHオブジェクトを作成
+            // GUIDは WSH のCLSID
+            dynamic shell = Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8")));
+
+            // WSHでショートカットを作成
+            var shortcut = shell.CreateShortcut(shortcutPath);
+
+            // ショートカットのリンク先設定
+            shortcut.TargetPath = filePath;
+
+            // アイコンのパスを設定
+            // ショートカットの元となるファイルから 0番目 のアイコンを指定
+            shortcut.IconLocation = filePath + ",0";
+
+            // ショートカットを保存
+            shortcut.Save();
+
+            //FileSystemAccessRule rule = new FileSystemAccessRule(new NTAccount("SYSTEM"),
+            //    FileSystemRights.FullControl,
+            //    InheritanceFlags.ObjectInherit | InheritanceFlags.ContainerInherit,
+            //    PropagationFlags.None,
+            //    AccessControlType.Allow);
+            //DirectorySecurity security = Directory.GetAccessControl(destDir);
+            //security.SetAccessRule(rule);
+            //Directory.SetAccessControl(destDir, security);
+            // Shell、COMオブジェクトの解放
+            System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shortcut);
+            System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shell);
+            return shortcutPath;
+
+        }
+
+
+        /// <summary>
+        /// AppData\Roamingディレクトリの取得
+        /// </summary>
+        /// <returns></returns>
+        public static string GetUserAppDataPath()
+        {
+            string path = string.Empty;
+            Assembly assembly;
+            Type at;
+            object[] r;
+
+            // Get the .EXE assembly
+            assembly = Assembly.GetEntryAssembly();
+            // Get a 'Type' of the AssemblyCompanyAttribute
+            at = typeof(AssemblyCompanyAttribute);
+            // Get a collection of custom attributes from the .EXE assembly
+            r = assembly.GetCustomAttributes(at, false);
+            // Get the Company Attribute
+            AssemblyCompanyAttribute ct =
+                          ((AssemblyCompanyAttribute)(r[0]));
+            // Build the User App Data Path
+            path = Environment.GetFolderPath(
+                        Environment.SpecialFolder.ApplicationData);
+            //path += @"\" + ct.Company;
+            //path += @"\" + assembly.GetName().Version.ToString();
+            return path;
+        }
     }
 }
