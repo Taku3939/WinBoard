@@ -24,4 +24,4 @@ Installerを使いアプリケーションをインストールし、起動す�
  
 # License
 
-WinBoard is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+WinBoard is under [Appache 2.0 license](https://github.com/Taku3939/WinBoard/blob/master/LICENSE.md).
