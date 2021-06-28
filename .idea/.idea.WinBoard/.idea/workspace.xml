@@ -34,26 +34,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e20dfef-fb2e-4af2-8dfe-064a4abef342" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfDashboard/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/WinBoard/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/WpfDashboard/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/WpfDashboard/v16/Server/sqlite3/db.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/WpfDashboard/v16/Server/sqlite3/storage.ide" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinBoard/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinBoard/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v16/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v16/Server/sqlite3/db.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v16/Server/sqlite3/storage.ide" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v16/Server/sqlite3/storage.ide-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/WinBoard/v16/Server/sqlite3/storage.ide-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WinBoard.sln" beforeDir="false" afterPath="$PROJECT_DIR$/WinBoard.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinBoard/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinBoard/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinBoard/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinBoard/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinBoard/VirtualFile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinBoard/WinApi.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WinBoard/WinBoard.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinBoard/WinBoard.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinBoard/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinBoard/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/WinBoard/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinBoard/setting.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinBoard/setting.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,21 +66,50 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48827A05-C015-4B4B-ADA3-2EAF5C10D8B0/dd/168448d6/Directory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48827A05-C015-4B4B-ADA3-2EAF5C10D8B0/90/160e1496/NumberStyles.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinBoard/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinBoard/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/24/b452aab2/TextBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A84B63C7-42D5-480B-9047-8BE2A17C9AC4/3d/b2abf3b2/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2676A2DA-6EDC-420E-890E-D28AA4572EE5/10/JsonReaderException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48827A05-C015-4B4B-ADA3-2EAF5C10D8B0/8c/8bfdd1e6/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48827A05-C015-4B4B-ADA3-2EAF5C10D8B0/4e/d9abc11a/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinBoard/setting.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/cc/4053b48b/WpfXamlLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48827A05-C015-4B4B-ADA3-2EAF5C10D8B0/5e/35b752bd/Path.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48827A05-C015-4B4B-ADA3-2EAF5C10D8B0/d4/c92b0142/NumberFormatInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/WinBoard/src/DashboardParam.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/src/Color.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/src/ApplicationUtility.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/src/EnumerableExtensions.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/src/AppShortcut.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/Properties/AssemblyInfo.cs" />
+      <option value="$PROJECT_DIR$/.editorconfig" />
+      <option value="$PROJECT_DIR$/WinBoard/setting.xaml.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/MainWindow.xaml.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/src/AppPath.cs" />
+      <option value="$PROJECT_DIR$/WinBoard/WinBoard.csproj" />
+      <option value="$PROJECT_DIR$/.gitignore" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1aGZoj9YPGQMc0BqpbhJGEZksUS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.16738895" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="XamlPreviewOptionsPage" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="WinBoard" type="DotNetProject" factoryName=".NET Project">
@@ -96,7 +127,7 @@
       <option name="PROJECT_KIND" value="Console" />
       <option name="PROJECT_TFM" value="" />
       <method v="2">
-        <option name="Build" enabled="true" />
+        <option name="Build" />
       </method>
     </configuration>
   </component>
@@ -112,6 +143,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -123,12 +155,16 @@
       <option name="presentableId" value="Default" />
       <updated>1586364068230</updated>
       <workItem from="1586364071951" duration="209000" />
+      <workItem from="1624864530331" duration="13582000" />
+      <workItem from="1624896342088" duration="6353000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -139,11 +175,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="-1452" y="163" key="SettingsEditor" timestamp="1586364185022">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1452" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586364185022" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>
